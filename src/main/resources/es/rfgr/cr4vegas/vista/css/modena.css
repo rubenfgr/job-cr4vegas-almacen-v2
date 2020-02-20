@@ -1,0 +1,151 @@
+.root {
+	-fx-base: rgb(50.0, 50.0, 50.0);
+	-fx-background-image: url("fondo.jpg");
+	-fx-color: derive(-fx-base, 10.0%);
+	-fx-control-inner-background: rgb(20.0, 20.0, 20.0);
+	-fx-control-inner-background-alt: derive(-fx-control-inner-background, 2.5%);
+	-fx-light-text-color: rgb(220.0, 220.0, 220.0);
+	-fx-mid-text-color: rgb(100.0, 100.0, 100.0);
+	-fx-dark-text-color: rgb(20.0, 20.0, 20.0);
+	-fx-accent: #b2afbf;
+	-fx-selection-bar-non-focused: rgb(50.0, 50.0, 50.0);
+	-fx-focus-color: #878787;
+}
+
+.text-input {
+	-fx-prompt-text-fill: derive(-fx-control-inner-background, 50.0%);
+}
+
+.text-input:focused {
+	-fx-prompt-text-fill: transparent;
+}
+
+.scroll-bar>.increment-button>.increment-arrow, .scroll-bar>.decrement-button>.decrement-arrow
+	{
+	-fx-background-color: -fx-mark-highlight-color, #a4a3a3;
+}
+
+.scroll-bar>.increment-button:hover>.increment-arrow, .scroll-bar>.decrement-button:hover>.decrement-arrow
+	{
+	-fx-background-color: -fx-mark-highlight-color, #a9a9a9;
+}
+
+.scroll-bar>.increment-button:pressed>.increment-arrow, .scroll-bar>.decrement-button:pressed>.decrement-arrow
+	{
+	-fx-background-color: -fx-mark-highlight-color, rgb(255.0, 255.0, 255.0);
+}
+
+.label {
+	-fx-font-size: 12px;
+	-fx-font-family: "Arial";
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-opacity: 1.0;
+}
+
+.label-bright {
+	-fx-font-size: 12px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: #0096ff;
+	-fx-opacity: 1.0;
+}
+
+.label-header {
+	-fx-font-size: 14px;
+	-fx-font-family: "Arial";
+	-fx-font-weight: bold;
+	-fx-underline: true;
+	/* -fx-effect: dropshadow(gaussian, rgba(255.0, 255.0, 255.0, 0.2), 0.0, 0.0, 0.0, 1.0); */
+}
+
+.hyperlink {
+	-fx-font-size: 12px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: white;
+	-fx-opacity: 1.0;
+	-fx-underline: false;
+}
+
+.hyperlink:hover {
+	-fx-font-size: 13px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: white;
+	-fx-opacity: 1.0;
+}
+
+.hyperlink:disabled {
+	-fx-font-size: 12px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: #a4a4a4;
+	-fx-opacity: 1.0;
+}
+
+.radio-button {
+	-fx-font-size: 13px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: #ff9000;
+	-fx-opacity: 1.0;
+	-fx-underline: true;
+}
+
+.radio-button:hover {
+	-fx-font-size: 14px;
+	-fx-font-family: "Arial";
+	-fx-text-fill: #ff9000;
+	-fx-opacity: 1.0;
+	-fx-underline: true;
+}
+
+.tab-header-background {
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.2);
+	-fx-effect: innershadow(two-pass-box, rgba(0.0, 0.0, 0.0, 2.0), 10.0, 0.0, 0.0, 0.0);
+}
+
+.tab-pane {
+	-fx-background-color: rgba(255.0, 255.0, 255.0, 0.05);
+	-fx-effect: innershadow(two-pass-box, rgba(0.0, 0.0, 0.0, 0.5), 2.0, 0.0, 0.0, 0.0);
+	-fx-font-size: 11px;
+	-fx-font-family: "Arial";
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-opacity: 1.0;
+}
+
+.button {
+	-fx-background-color: #707070, linear-gradient(#fcfcfc, #f3f3f3),
+		linear-gradient(#f2f2f2 0.0%, #ebebeb 49.0%, #dddddd 50.0%, #cfcfcf 100.0%);
+	-fx-background-insets: 0.0, 1.0, 2.0;
+	-fx-background-radius: 3.0, 2.0, 1.0;
+	-fx-padding: 3.0 20.0 3.0 20.0;
+	-fx-text-fill: black;
+	-fx-font-size: 12.0px;
+	-fx-font-weight: bold;
+}
+
+.button:hover {
+	-fx-background-color: #0096ff, linear-gradient(#fafdfe, #e8f5fc),
+		linear-gradient(#98d4fe 0.0%, #d9f0fc 49.0%, #bee6fd 50.0%, #98d4fe 100.0%);
+	-fx-background-insets: 0.0, 1.0, 2.0;
+	-fx-background-radius: 3.0, 2.0, 1.0;
+	-fx-padding: 3.0 20.0 3.0 20.0;
+	-fx-text-fill: black;
+	-fx-font-size: 12.0px;
+	-fx-font-weight: bold;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-font-size: 12px;
+	-fx-font-family: "Arial";
+	-fx-font-weight: bold;
+	-fx-text-fill: #ff9000;
+	-fx-opacity: 1.0;
+}
+
+.welcome-text {
+	-fx-font-size: 24.0px;
+	-fx-font-family: "Arial Black";
+	-fx-fill: #c3c3c3;
+	-fx-effect: innershadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.7), 6.0, 0.0, 0.0, 2.0);
+}

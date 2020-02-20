@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parametros xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="xsd/jdbc.xsd">
+
+	<bdoficina>
+		<ip>192.168.1.10</ip>
+		<port>5432</port>
+		<db>4vegas</db>
+		<driver>org.postgresql.Driver</driver>
+		<user>vegas1</user>
+		<pass>modchip2</pass>
+	</bdoficina>
+	
+	<bdalmacen>
+		<ip>192.168.1.236</ip>
+		<port>5432</port>
+		<db>cr4vegas</db>
+		<driver>org.postgresql.Driver</driver>
+		<user>postgres</user>
+		<pass>rfgr87dev</pass>
+	</bdalmacen>
+	
+</parametros>

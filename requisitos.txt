@@ -1,0 +1,1 @@
+Ventana agregar/modificar tienda no se ve bien, además, cuando saltan excepciones al agregar no se guardan los datos

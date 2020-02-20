@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="panelRaiz" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.rfgr.cr4vegas.vista.fxml.controlador.ventana.parte.VentanaManipulaParteControlador">
+   <children>
+      <VBox layoutX="-41.0" layoutY="-181.0" prefHeight="29.0" prefWidth="69.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane hgap="5.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Parte Oficial:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Código:" GridPane.rowIndex="1" />
+                  <Label text="Orden:" GridPane.rowIndex="2" />
+                  <Label GridPane.rowIndex="3" />
+                  <Label text="Descripción:" GridPane.rowIndex="4" />
+                  <TextArea fx:id="taOrden" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                  <TextArea fx:id="taDescripcion" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+                  <Label text="Tipo:" GridPane.rowIndex="6" />
+                  <Label text="Grupo:" GridPane.rowIndex="7" />
+                  <Label text="Origen:" GridPane.rowIndex="8" />
+                  <Label GridPane.rowIndex="5" />
+                  <Label GridPane.rowIndex="3" />
+                  <Label text="Prioridad:" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label text="Tiempo estimado:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label text="Fecha:" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label text="Llamó:" GridPane.rowIndex="9" />
+                  <Label text="Contador:" GridPane.rowIndex="10" />
+                  <Label text="Teléfono:" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label text="Estado:" GridPane.columnIndex="2" />
+                  <Label text="Impreso:" />
+                  <TextField fx:id="tfCodigo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfParteOficial" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfLlamo" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="tfContador" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="tfTiempoEstimado" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <TextField fx:id="tfFecha" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <TextField fx:id="tfTelefono" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <CheckBox fx:id="cbxEstado" mnemonicParsing="false" GridPane.columnIndex="3" />
+                  <CheckBox fx:id="cbxImpreso" mnemonicParsing="false" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="cbGrupo" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="cbOrigen" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="cbTipo" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="cbPrioridad" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btAceptar" mnemonicParsing="false" text="Aceptar" />
+                  <Button fx:id="btCancelar" mnemonicParsing="false" text="Cancelar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

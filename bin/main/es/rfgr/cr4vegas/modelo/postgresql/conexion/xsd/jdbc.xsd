@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="parametros">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bdoficina" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="bdalmacen" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="bdoficina" >
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ip" type="xs:string"/>
+				<xs:element name="port" type="xs:string"/>
+				<xs:element name="db" type="xs:string"/>
+				<xs:element name="driver" type="xs:string"/>
+				<xs:element name="user" type="xs:string"/>
+				<xs:element name="pass" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="bdalmacen" >
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ip" type="xs:string"/>
+				<xs:element name="port" type="xs:string"/>
+				<xs:element name="db" type="xs:string"/>
+				<xs:element name="driver" type="xs:string"/>
+				<xs:element name="user" type="xs:string"/>
+				<xs:element name="pass" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+<!--
+	<xs:element name="codigo">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z]{3}-[A-Z]{1,2}-[0-9]{3}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:simpleType name="t_limite_caracteres">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="t_precio">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+-->
+</xs:schema>

@@ -1,0 +1,60 @@
+
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building a CLI application.
+    id 'application'
+    
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+mainClassName = 'es.rfgr.cr4vegas.MainApp_IUGrafica_PostgreSQL'
+     
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:28.0-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+
+	// Libreria para manipular la BD de postgreSQL
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.6'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+    implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.7.0'
+    
+    // https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
+	implementation group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.10.0'
+	
+	// https://mvnrepository.com/artifact/com.lowagie/itext
+	implementation group: 'com.lowagie', name: 'itext', version: '2.1.7'
+
+	
+}
+
+javafx {
+    version = '13.0.1'
+    modules = [ 'javafx.base', 'javafx.controls', 'javafx.fxml' ]
+}
+
+jar {
+    manifest {
+        attributes 'Class-Path': configurations.runtimeClasspath.files.collect {it.toURI().toString()}.join(' '),
+                        'Main-Class': 'es.rfgr.cr4vegas.MainApp_IUGrafica_PostgreSQL'
+    }
+ /*   from {
+      	configurations.runtimeClasspath.files.collect { 
+      		it.isDirectory() ? it : zipTree(it) 
+      	}
+    } */
+}
+
+

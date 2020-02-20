@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="panelRaiz" prefHeight="450.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.rfgr.cr4vegas.vista.fxml.controlador.ventana.principal.VentanaManipulaTiendaControlador">
+   <children>
+      <VBox alignment="CENTER" layoutX="5.0" layoutY="5.0" prefWidth="300.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="panelActivar" spacing="5.0">
+                     <children>
+                        <GridPane hgap="5.0" vgap="5.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <CheckBox fx:id="cbActivo" mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <TextField fx:id="tfNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Activo:" />
+                              <Label text="Nombre:" GridPane.rowIndex="1" />
+                              <Label text="NIF:" GridPane.rowIndex="2" />
+                              <TextField fx:id="tfNIF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="Dirección" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                           <children>
+                              <VBox spacing="5.0" HBox.hgrow="SOMETIMES" />
+                              <GridPane hgap="5.0" vgap="5.0" HBox.hgrow="ALWAYS">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="NEVER" />
+                                  <RowConstraints vgrow="NEVER" />
+                                  <RowConstraints vgrow="NEVER" />
+                                    <RowConstraints vgrow="NEVER" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Localidad:" />
+                                    <Label text="C.P:" GridPane.rowIndex="1" />
+                                    <Label text="Calle:" GridPane.rowIndex="2" />
+                                    <Label text="Número:" GridPane.rowIndex="3" />
+                                    <TextField fx:id="tfLocalidad" GridPane.columnIndex="1" />
+                                    <TextField fx:id="tfCP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="tfCalle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="tfNumero" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Separator>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Telefonos" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" spacing="5.0">
+                           <children>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <ListView fx:id="lvTelefonos" maxWidth="150.0" prefHeight="100.0" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <TextField fx:id="tfTelefono" />
+                                    <HBox spacing="5.0">
+                                       <children>
+                                          <Button fx:id="btAgregarTelefono" mnemonicParsing="false" prefWidth="25.0" text="+" />
+                                          <Button fx:id="btBorrarTelefono" mnemonicParsing="false" prefWidth="25.0" text="-" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" spacing="5.0">
+               <children>
+                  <Button fx:id="btAceptar" mnemonicParsing="false" text="Aceptar" />
+                  <Button fx:id="btCancelar" mnemonicParsing="false" text="Cancelar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

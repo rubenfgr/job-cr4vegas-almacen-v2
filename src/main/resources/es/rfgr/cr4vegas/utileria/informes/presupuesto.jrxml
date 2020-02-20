@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="presupuesto" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgreSQL - cr4vegas - Almacen"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EEEFF0"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#D6EBFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="DatasetTable" uuid="be7ee7eb-f761-4c70-b639-550dceb00aca">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgreSQL - cr4vegas - Almacen"/>
+		<parameter name="cod_presupuesto_tabla" class="java.lang.Integer"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT m.nombretec, t.cantidad, t.precio, t.total FROM tienepresupuestomaterial t INNER JOIN 
+	material m ON t.codigo4v = m.codigo4v WHERE t.codpresupuesto = $P{cod_presupuesto_tabla}]]>
+		</queryString>
+		<field name="nombretec" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="nombretec"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="material"/>
+		</field>
+		<field name="cantidad" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+		<field name="precio" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="precio"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+		<field name="total" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="total"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+	</subDataset>
+	<subDataset name="DatasetTablaMaterial" uuid="278cc93e-17e6-4c19-b03b-89ab9856d430">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgreSQL - cr4vegas - Almacen"/>
+		<parameter name="cod_presupuesto_tabla" class="java.lang.Integer"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT m.nombretec, t.cantidad, t.precio, t.total FROM tienepresupuestomaterial t INNER JOIN 
+	material m ON t.codigo4v = m.codigo4v WHERE t.codpresupuesto = $P{cod_presupuesto_tabla}]]>
+		</queryString>
+		<field name="nombretec" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="nombretec"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="material"/>
+		</field>
+		<field name="cantidad" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+		<field name="precio" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="precio"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+		<field name="total" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="total"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tienepresupuestomaterial"/>
+		</field>
+	</subDataset>
+	<parameter name="logo" class="java.awt.image.BufferedImage"/>
+	<parameter name="cod_presupuesto" class="java.lang.Integer"/>
+	<parameter name="iva" class="java.lang.Double"/>
+	<parameter name="total_con_iva" class="java.lang.Double"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM presupuesto WHERE codpresupuesto = $P{cod_presupuesto}]]>
+	</queryString>
+	<field name="codpresupuesto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codpresupuesto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<field name="cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<field name="validez" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="validez"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="presupuesto"/>
+	</field>
+	<title>
+		<band height="209" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="91" width="80" height="16" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presupuesto: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="404" y="106" width="60" height="16" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd / MM / yyyy">
+				<reportElement x="464" y="106" width="90" height="16" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="65" height="60" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="476" height="20" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMUNIDAD DE REGANTES LAS CUATRO VEGAS DE ALMERÍA]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement stretchType="ContainerHeight" x="0" y="150" width="551" height="59" uuid="d174e8b3-e0db-4a2d-ad9f-ef43c499d234">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DatasetTable" uuid="55ec6667-5dcb-4976-a591-24898e2d781d">
+						<datasetParameter name="cod_presupuesto_tabla">
+							<datasetParameterExpression><![CDATA[$P{cod_presupuesto}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="138" uuid="ae6c94b8-3875-4a62-a11f-1a909d63b245">
+						<jr:columnHeader style="Table 1_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="138" height="20" uuid="02d7ee81-488c-4eb6-96cd-2c364572fec7">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Material]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="138" height="20" uuid="b03d7754-691e-49be-a1be-f916bcb265d8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{nombretec}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="138" uuid="2f2428db-8401-41e8-8a31-042cf33b0f64">
+						<jr:columnHeader style="Table 1_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="138" height="20" uuid="80729378-9c53-4d02-9516-69dea8e4f1fb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Cantidad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="138" height="20" uuid="c801da9f-3c36-43be-a95f-35700add2f9b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="138" uuid="4fd746c3-4c3c-4aef-add8-7c181a6a95c7">
+						<jr:columnHeader style="Table 1_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="138" height="20" uuid="fe2760d3-135d-43e0-bd94-4e5ded7e3dd9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Precio]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="138" height="20" uuid="d9282437-dc52-4930-b94e-9b8440bb1e5a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="137" uuid="b3af412e-df18-4bd3-86b6-8012f4a96a30">
+						<jr:columnHeader style="Table 1_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="137" height="20" uuid="2eaafcb2-de68-483e-9989-6f2085b9192e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="137" height="20" uuid="c7a61be7-c30e-49e2-a7db-45ec61683dbf"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{total} + "€"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="404" y="122" width="60" height="16" uuid="c35f379d-a8ec-426f-8577-59afc8d8d557"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Validez:]]></text>
+			</staticText>
+			<textField pattern="dd / MM / yyyy">
+				<reportElement x="464" y="122" width="90" height="16" uuid="42ea28fc-c71a-4348-8886-61fd671c62fb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{validez}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="107" width="80" height="16" uuid="0fa82407-e96f-441f-8a20-f66350225b95"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="80" y="107" width="130" height="16" uuid="22435ff7-9f15-4f25-87b8-c00a3f5902db"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="123" width="80" height="16" uuid="352736dc-2eeb-468f-aa22-b38c7c69fa3d"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="80" y="123" width="130" height="16" uuid="b34f3cf3-fd1b-43f1-b3df-93fccd9ef598"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="91" width="130" height="16" uuid="558a47db-895c-4f13-ae11-75df35105606"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codpresupuesto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="41" width="200" height="16" uuid="0d7b7b67-1d4d-42b8-8263-b7384e50b182">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tlf: 950 29 33 44]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="25" width="474" height="16" uuid="1a3b7d14-57f7-43aa-978d-f096a7a201c3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Av Cantabria, 1, 04240 Viator, Almería]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="57" width="474" height="16" uuid="80abc12e-7f4d-4094-937e-abfde24daadc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horario: De Lunes a Jueves de 8:00 a 14:00 y de 15:00 a 17:30, Viernes de 8:00 a 14:00]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30">
+			<textField>
+				<reportElement x="467" y="5" width="84" height="20" uuid="c5c1f482-0306-4483-a765-7ed2a3637d1c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total} + "€"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="5" width="137" height="20" uuid="660ea1a8-d54d-4efc-8949-32ec24f62ea9"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35">
+			<staticText>
+				<reportElement x="330" y="-5" width="137" height="20" uuid="acfa81db-a20b-4198-b97e-a32b623dd7d5"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.V.A (21 %):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="467" y="-5" width="84" height="20" uuid="7796e90e-1b1e-49b8-97a6-4e33470ad8ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{iva} + "€"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="15" width="137" height="20" uuid="3d939982-5f4b-418f-80c2-c928a7343195"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="467" y="15" width="84" height="20" uuid="e7f169c7-c494-4838-8ff4-cb4a89de92fb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total_con_iva} + "€"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="177"/>
+	</lastPageFooter>
+</jasperReport>

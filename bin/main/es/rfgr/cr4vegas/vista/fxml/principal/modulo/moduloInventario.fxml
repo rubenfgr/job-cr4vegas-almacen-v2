@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="panelRaiz" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.rfgr.cr4vegas.vista.fxml.controlador.principal.modulo.ModuloInventarioControlador">
+   <children>
+      <HBox prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox spacing="10.0">
+               <children>
+                  <RadioButton fx:id="rbInformacion" mnemonicParsing="false" text="Información" />
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="rbAlmacenPrincipal" mnemonicParsing="false" text="Almacen principal" />
+                  <Hyperlink fx:id="hlAlmacenPrincipalAgregarMaterial" text="Agregar material">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlAlmacenPrincipalModificarMaterial" text="Modificar material">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlAlmacenPrincipalEliminarMaterial" text="Eliminar material">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="rbCompras" mnemonicParsing="false" text="Compras" />
+                  <Hyperlink fx:id="hlComprasRealizarCompra" text="Realizar compra">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlComprasModificarCompra" text="Modificar compra">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlComprasEliminarCompra" text="Eliminar compra">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="rbAlmacenes" mnemonicParsing="false" text="Almacenes" />
+                  <Hyperlink fx:id="hlAgregarAlmacen" text="Agregar almacén">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlModificarAlmacen" text="Modificar almacén">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlEliminarAlmacen" text="Eliminar almacen">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlAlmacenesMaterialRetirado" text="Material retirado">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Separator prefWidth="200.0" />
+                  <RadioButton fx:id="rbPresupuestos" mnemonicParsing="false" text="Presupuestos" />
+                  <Hyperlink fx:id="hlRealizarPresupuesto" text="Realizar presupuesto">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlModificarPresupuesto" text="Modificar presupuesto">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hlEliminarPresupuesto" text="Eliminar presupuesto">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Hyperlink>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <StackPane fx:id="paneInventarioPrincipal" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

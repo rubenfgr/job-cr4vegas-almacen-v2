@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="panelRaiz" stylesheets="@../../../../css/modena.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.rfgr.cr4vegas.vista.fxml.controlador.principal.modulo.operario.OperarioPrincipalControlador">
+   <children>
+      <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="label-header" text="Listado de operarios" />
+            <HBox spacing="5.0" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Label styleClass="label-title" text="Buscar:" />
+                  <TextField fx:id="tfBuscarOperario" />
+                  <Label text="Total operarios activos:">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lbTotalOperariosActivos" text="---">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="tvListadoOperarios" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="tcCodigo" prefWidth="60.0" text="Código" />
+                      <TableColumn fx:id="tcActivo" prefWidth="60.0" text="Activo" />
+                        <TableColumn fx:id="tcNombre" prefWidth="120.0" text="Nombre" />
+                        <TableColumn fx:id="tcApellido1" prefWidth="120.0" text="Apellido 1" />
+                        <TableColumn fx:id="tcApellido2" prefWidth="120.0" text="Apellido 2" />
+                        <TableColumn fx:id="tcGrupo" prefWidth="120.0" text="Grupo" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <VBox prefWidth="500.0" spacing="5.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <ImageView fx:id="ivFoto" fitHeight="120.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="lbNombre" styleClass="label-bright" text="---" />
+                                    <GridPane hgap="5.0" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="NEVER" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                        <RowConstraints vgrow="NEVER" />
+                                          <RowConstraints vgrow="NEVER" />
+                                          <RowConstraints vgrow="NEVER" />
+                                          <RowConstraints vgrow="NEVER" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Código:" />
+                                          <Label text="Activo:" GridPane.rowIndex="1" />
+                                          <Label text="Grupo:" GridPane.rowIndex="2" />
+                                          <Label fx:id="lbCodigoOperario" styleClass="label-bright" text="---" GridPane.columnIndex="1" />
+                                          <Label fx:id="lbGrupo" styleClass="label-bright" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="lbActivo" styleClass="label-bright" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Localidad:" GridPane.columnIndex="2" />
+                                          <Label text="Calle:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label text="Número:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label text="Planta:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label text="Número planta:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label text="C.P:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="lbLocalidad" styleClass="label-bright" text="---" GridPane.columnIndex="3" />
+                                          <Label fx:id="lbCalle" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="lbNumero" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="lbPlanta" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="lbNumeroPlanta" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="lbCP" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox spacing="5.0">
+                                       <children>
+                                          <Label text="Telefonos:" />
+                                          <Label fx:id="lbTelefonos" styleClass="label-bright" text="---" />
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="5.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <GridPane hgap="5.0" vgap="5.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Talla calzado:" />
+                              <Label text="Talla pantalón largo:" GridPane.rowIndex="1" />
+                              <Label fx:id="lbTallaPantalonLargo" styleClass="label-bright" text="---" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="lbTallaCalzado" styleClass="label-bright" text="---" GridPane.columnIndex="1" />
+                              <Label text="Talla pantalón corto:" GridPane.rowIndex="2" />
+                              <Label fx:id="lbTallaPantalonCorto" styleClass="label-bright" text="---" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Talla chaqueta:" GridPane.rowIndex="3" />
+                              <Label fx:id="lbTallaForroPolar" styleClass="label-bright" text="---" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Talla chaquetón:" GridPane.columnIndex="2" />
+                              <Label text="Talla forro polar:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="Talla polo:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="lbTallaChaqueta" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label fx:id="lbTallaPolo" styleClass="label-bright" text="---" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label fx:id="lbTallaChaqueton" styleClass="label-bright" text="---" GridPane.columnIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Separator prefWidth="200.0" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Material">
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Buscar:" />
+                              <TextField fx:id="tfBuscarMaterial" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tvOperarioMaterial" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="tcMaterialNombre" prefWidth="300.0" text="Material" />
+                            <TableColumn fx:id="tcMaterialCantidad" prefWidth="75.0" text="Cantidad" />
+                              <TableColumn fx:id="tcMaterialFecha" prefWidth="150.0" text="Fecha" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>
